@@ -1,7 +1,6 @@
 # ignore 
 dnscrypt/
 motion/
-git_it.sh
 
 # Windows thumbnail cache files
 Thumbs.db
