@@ -14,13 +14,17 @@ if [ ! -d "${directory}" ]
 then
     # When ".git"-folder does !NOT! exists
     echo "Initializing local Git-Repo.";
-    
+
     # Initialize the local Git-Repository
     git init
 
     # Downloading Standard-Files for local Git-Repository
     wget https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
     wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/LICENSE
+    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.editorconfig
+    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.gitattributes
+    echo "Remember to edit README.md!";
+    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/README.md
 
     # Remind me to set the remote Repo
     echo "!---!";
@@ -46,7 +50,7 @@ else
     # Commit changes (If a string was added, use the added string.)
     echo "Committing changes to local Repo.";
     if [ -z "$1" ]; then
-        #zero length argument 
+        #zero length argument
         git commit -m "Committed at: $now (automatic via script)"
     else
         #non-zero length
@@ -71,3 +75,6 @@ else
     fi
 fi
 
+# Setting Verion-Tags: see= https://git-scm.com/book/en/v2/Git-Basics-Tagging
+# Set Verion via: git tag -a v1.4 -m "my version 1.4"
+# Publish tags: git push origin --tags
