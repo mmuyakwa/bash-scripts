@@ -5,25 +5,66 @@
 # License: MIT
 #
 
-# Show me changes
-git status
+# Check if ".git"-folder exists
+#[[ -e dir && ! -d dir ]]
 
-# Stange those changes
-git add -A
+directory="$PWD/.git"
 
-# Generate Date for Commit-Text
-now=$(date +"%Y-%m-%d %H:%M Uhr")
+if [ ! -d "${directory}" ]
+then
+    # When ".git"-folder does !NOT! exists
+    echo "Initializing local Git-Repo.";
+    
+    # Initialize the local Git-Repository
+    git init
 
-# Commit changes (If a string was added, use the added string.)
-if [ -z "$1" ]; then
-    #zero length argument 
-    git commit -m "Committed at: $now"
+    # Remind me to set the remote Repo
+    echo "!---!";
+    echo "Set remote repository";
+    echo "e.g.:";
+    echo "git remote add origin git@github.com:mmuyakwa/bash-scripts.git";
+    echo "!---!";
 else
-    #non-zero length
-    git commit -m "$1 - Committed at: $now"
+    # When ".git"-folder !DOES! exists
+
+    # Show me changes
+    echo "Git-Status:";
+    git status -s
+
+    # Stange those changes
+    echo "Adding changes to Staging-Area.";
+    git add -A
+
+    # Generate Date for Commit-Text
+    now=$(date +"%Y-%m-%d %H:%M Uhr")
+
+    # Commit changes (If a string was added, use the added string.)
+    echo "Committing changes to local Repo.";
+    if [ -z "$1" ]; then
+        #zero length argument 
+        git commit -m "Committed at: $now"
+    else
+        #non-zero length
+        git commit -m "$1 - Committed at: $now"
+    fi
+
+    #git remote add origin git@github.com:mmuyakwa/bash-scripts.git
+
+    # Check if a remote Repo is set.
+    #git remote -v > /dev/null
+    #if [ $? -eq 0 ]; then
+    if grep -Fxq "url = " "${directory}/config"
+    then
+        # Remote Repo ist set. Push changes to remote Repo.
+        echo "Pushing to remote Git-Repo.";
+        git push -u origin master
+    else
+        # Remind me to set the remote Repo
+        echo "!---!";
+        echo "Set remote repository";
+        echo "e.g.:";
+        echo "git remote add origin git@github.com:mmuyakwa/bash-scripts.git";
+        echo "!---!";
+    fi
 fi
 
-#git remote add origin git@github.com:mmuyakwa/bash-scripts.git
-
-# Push changes 
-git push -u origin master
