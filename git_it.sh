@@ -42,7 +42,7 @@ else
     echo "Committing changes to local Repo.";
     if [ -z "$1" ]; then
         #zero length argument 
-        git commit -m "Committed at: $now"
+        git commit -m "Committed at: $now (automatic via script)"
     else
         #non-zero length
         git commit -m "$1 - Committed at: $now"
