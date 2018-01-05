@@ -106,7 +106,7 @@ The script will not ask for further permission, because everything is automaticl
 
 ## Public-IP
 
-`extern_ip.sh` is a simple small script which shows the current public IP of your host. (IP will be fetched from http://checkip.dyndns.org/ )
+`extern_ip.sh` is a simple small script which shows the current public IP of your host. (IP will be fetched from [http://checkip.dyndns.org/](http://checkip.dyndns.org/) )
 
     user@client:~/scripts/bash$ sh extern_ip.sh
     73.217.243.152
