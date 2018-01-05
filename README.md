@@ -9,6 +9,7 @@ A tiny collection of **Shell-Scripts** I use on a regular basis.
 * [git_it.sh](#git-script)
 * [make_workdir.sh](#workbench-script)
 * [update.sh](#debian-update-script)
+* [extern_ip.sh](#public-ip)
 
 <!-- toc stop -->
 
@@ -36,7 +37,7 @@ If you run the script another time it will check for changes and stages these an
     git add -A
     git commit -m "Committed at: $now (automatic via script)"
 
-If you run this script with an string, that string will be used for the commit-message.
+If you run this script with an string, that string ("`Your Message`") will be used for the commit-message.
 
     git_it.sh "Your Message"
 
@@ -86,5 +87,12 @@ The following `apt-get`-commands will be issued:
     $SUDO apt-get autoclean -y
 
 The script will not ask for further permission, because everything is automaticly approved.
+
+## Public-IP
+
+`extern_ip.sh` is a simple small script which shows the current public IP of your host.
+
+    user@client:~/scripts/bash$ sh extern_ip.sh
+    73.217.243.152
 
 MIT License
