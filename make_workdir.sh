@@ -17,4 +17,7 @@ echo $now
 echo $WorkDirPath
 
 # mkdir "-p" (-p = "no error if existing, make parent directories as needed")
-mkdir -p $WorkDirPath && cd $WorkDirPath && nautilus $WorkDirPath & 
+mkdir -p $WorkDirPath
+cd "$WorkDirPath"
+nautilus $WorkDirPath &
+echo "$WorkDirPath"

@@ -51,6 +51,10 @@ The last step is to check if a remote Repo ist set and pushes the repo to remote
 
     git push -u origin master
 
+### Flowchart
+
+![flowchart](img/git_it-flow.png "The rundown of this script.")
+
 ### Usage
 
     sh git_it.sh # Initializes the Git-Repository on first run.

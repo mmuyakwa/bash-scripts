@@ -6,7 +6,6 @@
 #
 
 # Check if ".git"-folder exists
-#[[ -e dir && ! -d dir ]]
 
 directory="$PWD/.git"
 
