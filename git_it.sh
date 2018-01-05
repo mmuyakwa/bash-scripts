@@ -18,11 +18,16 @@ then
     # Initialize the local Git-Repository
     git init
 
+    # Downloading Standard-Files for local Git-Repository
+    wget https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
+    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/LICENSE
+
     # Remind me to set the remote Repo
     echo "!---!";
     echo "Set remote repository";
     echo "e.g.:";
     echo "git remote add origin git@github.com:mmuyakwa/bash-scripts.git";
+    echo "Check your .gitignore!";
     echo "!---!";
 else
     # When ".git"-folder !DOES! exists

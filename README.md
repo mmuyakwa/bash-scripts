@@ -6,10 +6,10 @@ A tiny collection of **Shell-Scripts** I use on a regular basis.
 
 <!-- toc -->
 
-* [git_it.sh](#git-script)
-* [make_workdir.sh](#workbench-script)
-* [update.sh](#debian-update-script)
-* [extern_ip.sh](#public-ip)
+* [git_it.sh](#git-script) - Git automation
+* [make_workdir.sh](#workbench-script) - For my daily Workbench
+* [update.sh](#debian-update-script) - Automaticly update Debian-based systems
+* [extern_ip.sh](#public-ip) - Show public IP
 
 <!-- toc stop -->
 
@@ -49,6 +49,12 @@ The last step is to check if a remote Repo ist set and pushes the repo to remote
 
     git push -u origin master
 
+### Usage
+
+    sh git_it.sh # Initializes the Git-Repository on first run.
+                 # Stages, Committs and Pushes if remote Repo is set.
+    sh git_it.sh "Your Message" # Adds "Your Message" to the Commit-Message.
+
 ## Workbench-Script
 
 Before starting a new project, I usually generate a Folder with the current date, where I put my project folders into.
@@ -64,6 +70,10 @@ I generate the foldername with the current date via:
     WorkDirPath=~/Dokumente/Workbench/$(date +"%Y")/$(date +"%m")/$(date +"%Y-%m-%d")
 
 And create the folder via **mkdir** with the parameter `-p` which will show no errors if a folder already exists, while creating that path.
+
+### Usage
+
+    sh make_workdir.sh # Simply creates the folder with the path of the current date.
 
 ## Debian Update-Script
 
@@ -88,11 +98,19 @@ The following `apt-get`-commands will be issued:
 
 The script will not ask for further permission, because everything is automaticly approved.
 
+### Usage
+
+    sh update.sh # Updates the system and approves every change (Must be root or a SUDO-User).
+
 ## Public-IP
 
-`extern_ip.sh` is a simple small script which shows the current public IP of your host.
+`extern_ip.sh` is a simple small script which shows the current public IP of your host. (IP will be fetched from http://checkip.dyndns.org/ )
 
     user@client:~/scripts/bash$ sh extern_ip.sh
     73.217.243.152
+
+### Usage
+
+    sh extern_ip.sh # Simply prints your public IP on the console.
 
 MIT License
