@@ -2,6 +2,8 @@
 
 A tiny collection of **Shell-Scripts** I use on a regular basis.
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)](https://github.com/mmuyakwa/bash-scripts/blob/master/LICENSE)
+
 ## Table of Contents
 
 <!-- toc -->
