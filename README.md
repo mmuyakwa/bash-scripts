@@ -7,7 +7,8 @@ A tiny collection of **Shell-Scripts** I use on a regular basis.
 <!-- toc -->
 
 * [git_it.sh](#git-script)
-* [make_workdir.sh](#Workbench-Script)
+* [make_workdir.sh](#workbench-script)
+* [update.sh](#debian-update-script)
 
 <!-- toc stop -->
 
@@ -62,5 +63,28 @@ I generate the foldername with the current date via:
     WorkDirPath=~/Dokumente/Workbench/$(date +"%Y")/$(date +"%m")/$(date +"%Y-%m-%d")
 
 And create the folder via **mkdir** with the parameter `-p` which will show no errors if a folder already exists, while creating that path.
+
+## Debian Update-Script
+
+This script is intended for developer-machines.
+**I would not recommend using this on a productive system.**
+This script first checks if you are **root**.
+If you are `not` **root**, all `apt-get`-commands will run with `sudo`, assuming you are in the **sudo-group**.
+
+    SUDO=''
+    if [ $(id -u) -ne 0 ]; then
+        SUDO='sudo'
+        echo "Your not root."
+    fi
+
+The following `apt-get`-commands will be issued:
+
+    $SUDO apt-get update -y
+    $SUDO apt-get upgrade -y
+    $SUDO apt-get dist-upgrade -y
+    $SUDO apt-get autoremove -y
+    $SUDO apt-get autoclean -y
+
+The script will not ask for further permission, because everything is automaticly approved.
 
 MIT License
