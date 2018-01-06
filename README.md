@@ -12,7 +12,8 @@ A tiny collection of **Shell-Scripts** I use on a regular basis.
 * [make_workdir.sh](#workbench-script) - For my daily Workbench
 * [update.sh](#debian-update-script) - Automaticly update Debian-based systems
 * [extern_ip.sh](#public-ip) - Show public IP
-* [install_composer.sh](#install-composer) - Automaticly install **Composer** on Debian-based systems (with **Laravel** `a PHP-Framework`)
+  * *Installers*:
+  * [install_composer.sh](#install-composer) - Automaticly install **Composer** on Debian-based systems (with **Laravel** `a PHP-Framework`)
 
 <!-- toc stop -->
 
