@@ -18,12 +18,12 @@ then
     git init
 
     # Downloading Standard-Files for local Git-Repository
-    wget https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
-    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/LICENSE
-    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.editorconfig
-    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.gitattributes
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/LICENSE
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.editorconfig
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.gitattributes
     echo "Remember to edit README.md!";
-    wget https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/README.md
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/README.md
 
     # Remind me to set the remote Repo
     echo "!---!";

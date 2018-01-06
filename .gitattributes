@@ -3,3 +3,8 @@
 *.vcproj  text eol=crlf
 *.sh  text eol=lf
 *.jpg -text
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+CHANGELOG.md export-ignore
+

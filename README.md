@@ -12,6 +12,7 @@ A tiny collection of **Shell-Scripts** I use on a regular basis.
 * [make_workdir.sh](#workbench-script) - For my daily Workbench
 * [update.sh](#debian-update-script) - Automaticly update Debian-based systems
 * [extern_ip.sh](#public-ip) - Show public IP
+* [install_composer.sh](#install-composer) - Automaticly install **Composer** on Debian-based systems (with **Laravel** `a PHP-Framework`)
 
 <!-- toc stop -->
 
@@ -47,7 +48,7 @@ which will then
 
     git commit -m "Your Message - Committed at: $now"
 
-The last step is to check if a remote Repo ist set and pushes the repo to remote.
+The last step is to check if a remote Repo ist set and push the repo to remote.
 
     git push -u origin master
 
@@ -118,5 +119,9 @@ The script will not ask for further permission, because everything is automaticl
 ### Usage
 
     sh extern_ip.sh # Simply prints your public IP on the console.
+
+## Install Composer
+
+`install_composer.sh` is a script I wipped up to quickly install **Composer** on development machines (mostly on VM's).
 
 MIT License
