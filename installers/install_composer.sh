@@ -17,7 +17,7 @@ fi
 # Install PHP-CLI in v7.0 (php 7.0)
 $SUDO apt-get install php7.0-cli -y
 # Dependencies for Lavarel
-$SUDO apt-get install php7.0-zip php-mcrypt php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json openssl -y
+$SUDO apt-get install php7.0-zip php-mcrypt php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json curl openssl -y
 
 # Script from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
@@ -42,5 +42,9 @@ $SUDO mv composer.phar /usr/local/bin/composer
 composer global require "laravel/installer"
 # Write LAVAREL to $PATH
 echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+
+# install Node.js
+curl -sL https://deb.nodesource.com/setup_8.x | $SUDO -E bash -
+$SUDO apt-get install -y nodejs
 
 exit $RESULT
