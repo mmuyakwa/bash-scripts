@@ -13,7 +13,7 @@ if [ $(id -u) -ne 0 ]; then
     echo "Running apt-get with SUDO."
 fi
 
-# Install PHP-CLI in v7.0 (php 7.0)
-$SUDO apt-get install filezilla -y
+# Install my usual suspects
+$SUDO apt-get install filezilla remmina mc screen build-essentials curl git -y
 
 # filezilla remmina mc screen build-essentials curl git
