@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# This script installs composer ( https://getcomposer.org/download/ ).
-# Must be root or SUDO-User to run script successfully.
-# Author: Michael Muyakwa, 2018-01-05
-# License: MIT
-#
+#title:         install_composer.sh
+#description:   This script installs composer ( https://getcomposer.org/download/ ).
+#               Must be root or SUDO-User to run script successfully.
+#author:        Michael Muyakwa
+#created:       2018-01-05
+#updated:       N/A
+#version:       0.8
+#license:       MIT
+#usage:         ./install_composer.sh
+#==============================================================================
 
 # root is always user_id 0
 SUDO=''

@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# This script is for lazy people who want to keep their Debian-based system up to date.
-# Author: Michael Muyakwa, 2018-01-04
-# License: MIT
-#
+#title:         update.sh
+#description:   This script is for lazy people who want to keep their Debian-based system up to date.
+#author:        Michael Muyakwa
+#created:       2018-01-04
+#updated:       2018-01-19
+#version:       1.4
+#license:       MIT
+#usage:         ./update.sh
+#==============================================================================
 
 # root is always user_id 0
 SUDO=''

@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# This script installs composer ( https://getcomposer.org/download/ ).
+# This script installs my usual suspects on Debian-based Systems.
+# This Script is intended for systems WITHOUT a GUI
 # Must be root or SUDO-User to run script successfully.
-# Author: Michael Muyakwa, 2018-01-05
+# Author: Michael Muyakwa, 2018-01-19
 # License: MIT
 
 # root is always user_id 0
@@ -14,6 +15,4 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install my usual suspects
-$SUDO apt-get install filezilla remmina mc screen build-essentials curl git -y
-
-# filezilla remmina mc screen build-essentials curl git
+$SUDO apt-get install mc screen build-essentials curl git -y

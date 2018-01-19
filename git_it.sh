@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# This is my tiny GIT-commit-script.
-# Author: Michael Muyakwa, 2018-01-04
-# License: MIT
-#
+#title:         git_it.sh
+#description:   This is my tiny GIT-commit-script.
+#author:        Michael Muyakwa
+#created:       2018-01-04
+#updated:       2018-01-19
+#version:       1.2
+#license:       MIT
+#usage:         ./git_it.sh
+#==============================================================================
 
 # Check if ".git"-folder exists
 
