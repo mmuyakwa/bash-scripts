@@ -16,6 +16,7 @@ then
 
     # Initialize the local Git-Repository
     git init
+    git config --global push.default simple
 
     # Downloading Standard-Files for local Git-Repository
     wget -nc https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
