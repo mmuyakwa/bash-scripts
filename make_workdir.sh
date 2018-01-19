@@ -19,5 +19,16 @@ echo $WorkDirPath
 # mkdir "-p" (-p = "no error if existing, make parent directories as needed")
 mkdir -p $WorkDirPath
 cd "$WorkDirPath"
-nautilus $WorkDirPath &
+
+# Checking which Filemanager is installed (Nautilus/Pantheon-Files)
+which nautilus > /dev/null
+if [ $? -eq 0 ]; then
+    nautilus $WorkDirPath &
+fi
+
+which pantheon-files > /dev/null
+if [ $? -eq 0 ]; then
+    pantheon-files $WorkDirPath &
+fi
+
 echo "$WorkDirPath"
