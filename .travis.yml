@@ -10,14 +10,19 @@ language: bash
 deploy:
   - provider: script
     script: update.sh
+    skip_cleanup: true
   - provider: script
     script: installers/install_ansible.sh
+    skip_cleanup: true
   - provider: script
     script: installers/install_composer.sh
+    skip_cleanup: true
   - provider: script
     script: installers/install_defaults-Non_GUI.sh
+    skip_cleanup: true
   - provider: script
     script: installers/install_monitorix.sh
+    skip_cleanup: true
 
 notifications: # set notification options
   email:
