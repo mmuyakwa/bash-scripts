@@ -15,14 +15,17 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install my usual suspects
-$SUDO apt-get install filezilla remmina mc screen build-essentials curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar -y
+$SUDO apt-get install filezilla remmina mc screen build-essential software-properties-common redshift-gtk retext curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar ffmpeg dialog -y
 
 $SUDO add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
+$SUDO add-apt-repository ppa:obsproject/obs-studio -y
 
 $SUDO apt-get update
-$SUDO apt-get install simplescreenrecorder 
+$SUDO apt-get install simplescreenrecorder -y
+$SUDO apt-get install obs-studio -y
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 $SUDO dpkg -i google-chrome-stable_current_amd64.deb
 $SUDO apt-get install -f
 $SUDO dpkg -i google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
+

@@ -43,3 +43,4 @@ fi
 echo $WorkDirPath
 cd $WorkDirPath
 exec bash
+

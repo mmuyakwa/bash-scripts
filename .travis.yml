@@ -1,0 +1,15 @@
+dist: trusty
+sudo: required
+
+language: bash
+
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    script: installers/install_ansible.sh
+  - provider: script
+    script: installers/install_composer.sh
+  - provider: script
+    script: installers/install_defaults-Non_GUI.sh
+  - provider: script
+    script: installers/install_monitorix.sh

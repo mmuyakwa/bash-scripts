@@ -15,4 +15,4 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install my usual suspects
-$SUDO apt-get install mc screen build-essentials curl git -y
+$SUDO apt-get install mc screen build-essential software-properties-common curl git dialog -y
