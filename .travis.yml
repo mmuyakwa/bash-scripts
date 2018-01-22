@@ -7,21 +7,22 @@ language: bash
 #- sudo apt-get update -qq
 
 # deploy develop to the staging environment
-- provider: script
-  script: update.sh
-- provider: script
-  script: installers/install_ansible.sh
-- provider: script
-  script: installers/install_composer.sh
-- provider: script
-  script: installers/install_defaults-Non_GUI.sh
-- provider: script
-  script: installers/install_monitorix.sh
+deploy:
+  - provider: script
+    script: update.sh
+  - provider: script
+    script: installers/install_ansible.sh
+  - provider: script
+    script: installers/install_composer.sh
+  - provider: script
+    script: installers/install_defaults-Non_GUI.sh
+  - provider: script
+    script: installers/install_monitorix.sh
 
 notifications: # set notification options
   email:
     recipients:
       - mmuyakwa@gmail.com
     # change is when the repo status goes from pass to fail or vice versa
-    on_success: [always|never|change]
-    on_failure: [always|never|change]
+    on_success: always
+    on_failure: always
