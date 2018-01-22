@@ -1,6 +1,7 @@
 # ignore 
 dnscrypt/
 motion/
+.travis.yml
 
 # Laravel
 /node_modules
