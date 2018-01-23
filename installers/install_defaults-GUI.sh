@@ -15,7 +15,7 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install my usual suspects
-$SUDO apt-get install filezilla remmina mc screen build-essential software-properties-common redshift-gtk retext curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar ffmpeg dialog -y
+$SUDO apt-get install filezilla remmina mc screen build-essential software-properties-common redshift-gtk retext locales-all curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar ffmpeg dialog -y
 
 $SUDO add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
 $SUDO add-apt-repository ppa:obsproject/obs-studio -y
