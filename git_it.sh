@@ -24,7 +24,7 @@ then
     git config --global push.default simple
 
     # Downloading Standard-Files for local Git-Repository
-    wget -nc https://raw.githubusercontent.com/mmuyakwa/Web-WhatsApp/master/.gitignore
+    wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.gitignore
     wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/LICENSE
     wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.editorconfig
     wget -nc https://raw.githubusercontent.com/mmuyakwa/bash-scripts/master/.gitattributes
