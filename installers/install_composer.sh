@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #title:         install_composer.sh
 #description:   This script installs composer ( https://getcomposer.org/download/ ).

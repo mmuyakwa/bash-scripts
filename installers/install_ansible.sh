@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script installs ansible on the system.
 # Author: Michael Muyakwa, 2018-01-20

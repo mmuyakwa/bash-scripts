@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #title:         make_workdir.sh
 #description:   This Script creates my daily folder for starting new projects.

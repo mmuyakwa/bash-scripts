@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script installs my usual suspects on Debian-based Systems.
 # This Script is intended for systems WITH a GUI

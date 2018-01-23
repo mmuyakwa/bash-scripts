@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #title:         update.sh
 #description:   This script is for lazy people who want to keep their Debian-based system up to date.

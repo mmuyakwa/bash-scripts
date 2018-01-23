@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #title:         extern_ip.sh
 #description:   Show public IP

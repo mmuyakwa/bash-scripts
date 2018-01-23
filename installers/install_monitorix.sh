@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script installs Monitorix. (http://www.monitorix.org)
 # Author: Michael Muyakwa, 2018-01-21
