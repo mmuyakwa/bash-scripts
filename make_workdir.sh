@@ -4,8 +4,8 @@
 #description:   This Script creates my daily folder for starting new projects.
 #author:        Michael Muyakwa
 #created:       2018-01-04
-#updated:       N/A
-#version:       1.0
+#updated:       2018-01-28
+#version:       1.8
 #license:       MIT
 #usage:         ./make_workdir.sh
 #==============================================================================
@@ -27,20 +27,9 @@ then
     # mkdir "-p" (-p = "no error if existing, make parent directories as needed")
     mkdir -p $WorkDirPath
 
-    # Checking which Filemanager is installed (Nautilus/Pantheon-Files)
-    which nautilus > /dev/null
-    if [ $? -eq 0 ]; then
-        nautilus $WorkDirPath &
-    fi
-
-    which pantheon-files > /dev/null
-    if [ $? -eq 0 ]; then
-        pantheon-files $WorkDirPath &
-    fi
-
+    # Open created Folder in Filemanager
+    xdg-open $WorkDirPath &
 fi
 
 echo $WorkDirPath
 cd $WorkDirPath
-exec bash
-
