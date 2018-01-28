@@ -76,6 +76,7 @@ else
         echo "Set remote repository";
         echo "e.g.:";
         echo "git remote add origin git@github.com:mmuyakwa/bash-scripts.git";
+        echo "For http/s repos you can use 'git config credential.helper store'"
         echo "!---!";
     fi
 fi
