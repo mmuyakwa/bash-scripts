@@ -19,11 +19,9 @@ WorkDirPath=~/Dokumente/Workbench/$(date +"%Y")/$(date +"%m")/$(date +"%Y-%m-%d"
 
 if [ ! -d "${WorkDirPath}" ]
 then
-
     # Show Variables and path that will be generated
     echo $now
-    echo $WorkDirPath
-
+    
     # mkdir "-p" (-p = "no error if existing, make parent directories as needed")
     mkdir -p $WorkDirPath
 
