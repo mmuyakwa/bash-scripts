@@ -19,7 +19,19 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 $SUDO apt-get update -y
+
+# # Test to show available updates
+# $SUDO apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,:,\+]+)\)? /i) {print "PROGRAM: $1 INSTALLED: $2 AVAILABLE: $3\n"}'
+# # 10 seconds pause
+# SEC=10
+# for i in `seq $SEC -1 1`;do
+#         printf "\rNext step in: %`expr length $SEC`ds" "$i";
+#         sleep 1;
+# done
+# echo
+
 $SUDO apt-get upgrade -y
 $SUDO apt-get dist-upgrade -y
 $SUDO apt-get autoremove -y
 $SUDO apt-get autoclean -y
+
