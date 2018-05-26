@@ -1,0 +1,11 @@
+alias sshr='ssh-keygen -R' #hostname
+alias update='sh ~/scripts/bash-scripts/update.sh'
+alias workdir='bash ~/scripts/bash-scripts/make_workdir.sh'
+alias gitit='sh ~/scripts/bash-scripts/git_it.sh'
+alias gc='git clone'
+alias yt="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' -l"
+alias sshh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" #user@remote_machine
+alias dotnew="dotnet new console -o" #AppName
+alias dotlin="dotnet publish -c Release -r ubuntu.16.10-x64"
+alias dotwin="dotnet publish -c Release -r win10-x64"
+alias sshsetkey="ssh-copy-id -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no" #user@remote_machine
