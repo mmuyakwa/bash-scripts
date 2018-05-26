@@ -29,3 +29,4 @@ $SUDO apt-get install dotnet-sdk-2.1.200 -y
 
 rm packages-microsoft-prod.deb
 
+echo "export DOTNET_CLI_TELEMETRY_OPTOUT=1" >> ~/.bashrc
