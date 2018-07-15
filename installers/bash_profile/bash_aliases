@@ -9,3 +9,5 @@ alias dotnew="dotnet new console -o" #AppName
 alias dotlin="dotnet publish -c Release -r ubuntu.16.10-x64"
 alias dotwin="dotnet publish -c Release -r win10-x64"
 alias sshsetkey="ssh-copy-id -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no" #user@remote_machine
+alias scpc="scp -o StrictHostKeyChecking=no" #file computername:path
+alias prowl="sh ~/scripts/bash-scripts/prowl.sh -s $HOSTNAME -a Bash $(ifconfig | grep -Eo 'inet (Adresse:|address:|addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')"
