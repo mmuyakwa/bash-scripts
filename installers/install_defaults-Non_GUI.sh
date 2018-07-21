@@ -14,9 +14,10 @@ if [ $(id -u) -ne 0 ]; then
     echo "Running apt-get with SUDO."
 fi
 
+# Install my usual suspects
+$SUDO apt-get install mc screen build-essential software-properties-common locales-all curl git -y
 # Set Timezone to Berlin
 $SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-# Install my usual suspects
-$SUDO apt-get install mc screen build-essential software-properties-common locales-all curl git -y
-
+# Run the following code to set your Keyboard-Language
+# 'sudo dpkg-reconfigure keyboard-configuration'
