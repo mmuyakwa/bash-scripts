@@ -20,6 +20,7 @@ apt-get update
 apt-get install apt-transport-https -y
 apt-get install filebot #--install-suggests
 
+apt install libmediainfo0v5 -y # Prevent: Unable to load amd64 (64-bit) native library libmediainfo.so
 
 #####NEWS!
 
