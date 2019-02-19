@@ -4,8 +4,8 @@
 #description:   This Script creates my daily folder for starting new projects.
 #author:        Michael Muyakwa
 #created:       2018-01-04
-#updated:       2018-01-28
-#version:       1.8
+#updated:       2019-02-05
+#version:       2.4
 #license:       MIT
 #usage:         ./make_workdir.sh
 #==============================================================================
@@ -31,3 +31,9 @@ fi
 
 echo $WorkDirPath
 cd $WorkDirPath
+
+# Save Folder-Path to Clipboard
+if [ -f "/usr/bin/xclip" ]; then
+    echo $WorkDirPath | xclip -selection c
+fi
+
