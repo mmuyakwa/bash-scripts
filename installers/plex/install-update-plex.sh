@@ -23,7 +23,7 @@ fi
 # or hipster respectively.
 #
 # requirements: apt-get install curl jq
-$SUDO apt-get install curl jq
+$SUDO apt-get install curl jq sqlite3 -y
 
 # Insane JQ parsing to select both build AND distro. 
 plex_url=$(curl -s https://plex.tv/api/downloads/1.json \
