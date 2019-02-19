@@ -30,8 +30,13 @@ $SUDO apt-get update -y
 # done
 # echo
 
+# List available new Packages
+$SUDO apt list --upgradable
+
 $SUDO apt-get upgrade -y
 $SUDO apt-get dist-upgrade -y
 $SUDO apt-get autoremove -y
 $SUDO apt-get autoclean -y
 
+# List packages which where installed today
+$SUDO cat /var/log/dpkg.log | grep "^$(date +%Y-%m-%d).*\ installed\ "
