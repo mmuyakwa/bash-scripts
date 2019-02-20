@@ -31,7 +31,7 @@ $SUDO apt-get update -y
 # echo
 
 # List available new Packages
-$SUDO apt list --upgradable
+$SUDO apt list --upgradeable
 
 $SUDO apt-get upgrade -y
 $SUDO apt-get dist-upgrade -y
