@@ -25,8 +25,8 @@ apt install libmediainfo0v5 -y # Prevent: Unable to load amd64 (64-bit) native l
 #####NEWS!
 
 # It's easier to install the legacy-Version, which is free of charge.
-# AMD64 http://sourceforge.mirrorservice.org/f/project/fi/filebot/filebot/FileBot_4.7.9/filebot_4.7.9_amd64.deb
-# i386 http://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.7.9/filebot_4.7.9_i386.deb
+# AMD64 https://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.7.9/filebot_4.7.9_amd64.deb
+# i386 https://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.7.9/filebot_4.7.9_i386.deb
 # Raspberry Pi - Download "filebot_4.7.9_armhf.deb" from http://r-massive.cellarseer.com/filebot-4-7-9-legacy-build-archive/ 
 
 
