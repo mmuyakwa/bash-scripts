@@ -2,10 +2,10 @@
 
 
 # Install Java with Desktop-client
-#sudo apt-get install default-jre -y
+#sudo apt-get install default-jdk -y
 
 # Install Java on headless-client
-sudo apt-get install default-jre-headless -y
+sudo apt-get install default-jdk-headless -y
 
 # 1. Import signing keys
 curl -fsSL "https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub" | apt-key add "-"

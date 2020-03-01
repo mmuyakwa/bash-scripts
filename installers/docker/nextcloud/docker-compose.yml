@@ -1,0 +1,29 @@
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootiedbpasswd
+      - MYSQL_PASSWORD=nextcloudMOTHERFUCKER!!
+      - MYSQL_DATABASE=nextcloud_db
+      - MYSQL_USER=ncdbuser
+
+  app:
+    image: nextcloud
+    ports:
+      - 8080:80
+    links:
+      - db
+    volumes:
+      - nextcloud:/root/nextcloud
+    restart: always
+
