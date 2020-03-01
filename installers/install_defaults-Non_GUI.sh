@@ -15,7 +15,13 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install my usual suspects
-$SUDO apt-get install mc screen build-essential software-properties-common locales-all curl git gdebi-core rename awscli apt-transport-https language-pack-de language-pack-de-base language-support-de -y
+$SUDO apt-get install mc screen build-essential software-properties-common locales-all curl git gdebi-core rename awscli apt-transport-https -y
+$SUDO apt-get install language-pack-de language-pack-de-base language-support-de -y
+
+# Set locale
+$SUDO locale-gen de_DE.UTF-8
+$SUDO update-locale LANG=de_DE.UTF-8
+
 # Set Timezone to Berlin
 $SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
