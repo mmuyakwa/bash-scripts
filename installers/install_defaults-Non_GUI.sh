@@ -16,7 +16,7 @@ fi
 
 # Install my usual suspects
 $SUDO apt-get install mc screen build-essential software-properties-common locales-all curl git gdebi-core rename awscli apt-transport-https -y
-$SUDO apt-get install language-pack-de language-pack-de-base language-support-de -y
+$SUDO apt-get install language-pack-de language-pack-de-base language-support-de clamav -y
 
 # Set locale
 $SUDO locale-gen de_DE.UTF-8
