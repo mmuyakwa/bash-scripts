@@ -12,21 +12,32 @@
 #==============================================================================
 
 # root is always user_id 0
-SUDO=''
+$SUDO=''
 if [ $(id -u) -ne 0 ]; then
-    SUDO='sudo'
+    $SUDO='sudo'
     echo "Your not root."
     echo "Running apt-get with SUDO."
 fi
 
+# $SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
+# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | $SUDO apt-key add -
+# $SUDO cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+# deb https://apt.kubernetes.io/ kubernetes-xenial main
+# EOF
+# $SUDO apt-get update
+# $SUDO apt-get install -y kubelet kubeadm kubectl
+# $SUDO apt-mark hold kubelet kubeadm kubectl
+
+
 $SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | $SUDO apt-key add -
-$SUDO cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://apt.kubernetes.io/ kubernetes-xenial main
-EOF
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | $SUDO tee -a /etc/apt/sources.list.d/kubernetes.list
 $SUDO apt-get update
-$SUDO apt-get install -y kubelet kubeadm kubectl
-$SUDO apt-mark hold kubelet kubeadm kubectl
+$SUDO apt-get install -y kubectl
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+$SUDO mv ./kubectl /usr/local/bin/kubectl
 
 $SUDO systemctl daemon-reload
 $SUDO systemctl restart kubelet

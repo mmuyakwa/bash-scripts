@@ -15,10 +15,19 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Install dependencies (powerline and pip [python]) and needed Fonts.
-$SUDO apt-get install powerline fonts-powerline python-pip -y
+$SUDO apt-get install powerline fonts-powerline python-pip python3-pip -y
+
+# Check-PIP-version
+which pip
+RESULT=$?
 
 # Install "powerline-shell"
-$SUDO pip install powerline-shell
+if [ $RESULT -eq 0 ]; then
+  $SUDO pip install powerline-shell
+else
+  $SUDO pip3 install powerline-shell
+fi
+
 
 # Use my config for Powerline in current profile
 cp powerline-shell.json ~/.powerline-shell.json

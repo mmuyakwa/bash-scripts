@@ -23,6 +23,13 @@ fi
 $SUDO apt-get update -y
 $SUDO apt-get install git -y
 
+# Set locale
+$SUDO locale-gen de_DE.UTF-8
+$SUDO update-locale LANG=de_DE.UTF-8
+
+# Set Timezone to Berlin
+$SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
 cd
 if [ ! -d "scripts" ]; then
     mkdir scripts
@@ -41,3 +48,6 @@ fi
 sh update.sh
 
 sh installers/install_defaults-Non_GUI.sh
+
+cd installers/powerline/
+sh install_powerline.sh
