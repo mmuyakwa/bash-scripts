@@ -18,25 +18,25 @@ if [ $(id -u) -ne 0 ]; then
     echo "Running apt-get with SUDO."
 fi
 
-$SUDO apt-get update -y
+# Check if another process is already running a apt/dpkg-instance.
+locked=$($SUDO lsof -e /run/user/1000/gvfs /var/lib/dpkg/lock | wc -l);
 
-# # Test to show available updates
-# $SUDO apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,:,\+]+)\)? /i) {print "PROGRAM: $1 INSTALLED: $2 AVAILABLE: $3\n"}'
-# # 10 seconds pause
-# SEC=10
-# for i in `seq $SEC -1 1`;do
-#         printf "\rNext step in: %`expr length $SEC`ds" "$i";
-#         sleep 1;
-# done
-# echo
+if [ $locked -eq 0 ]; then
 
-# List available new Packages
-$SUDO apt list --upgradeable
+    $SUDO apt-get update -y
 
-$SUDO apt-get upgrade -y
-$SUDO apt-get dist-upgrade -y
-$SUDO apt-get autoremove -y
-$SUDO apt-get autoclean -y
+    # List available new Packages
+    $SUDO apt list --upgradeable
 
-# List packages which where installed today
-$SUDO cat /var/log/dpkg.log | grep "^$(date +%Y-%m-%d).*\ installed\ "
+    $SUDO apt-get upgrade -y
+    $SUDO apt-get dist-upgrade -y
+    $SUDO apt-get autoremove -y
+    $SUDO apt-get autoclean -y
+
+    # List packages which where installed today
+    $SUDO cat /var/log/dpkg.log | grep "^$(date +%Y-%m-%d).*\ installed\ "
+
+else
+    echo "Another process is already running updates.";
+    echo "Run this script at a later time again.";
+fi

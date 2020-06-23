@@ -22,7 +22,7 @@ fi
 # Install PHP-CLI in v7.0 (php 7.0)
 $SUDO apt-get install php-cli -y
 # Dependencies for Lavarel
-$SUDO apt-get install php-zip php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json curl openssl -y
+$SUDO apt-get install php-zip php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json curl php-curl openssl -y
 
 # Script from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)

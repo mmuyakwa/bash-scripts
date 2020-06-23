@@ -1,6 +1,7 @@
 .travis.yml
 
 # ignore 
+Todos/
 dnscrypt/
 motion/
 
