@@ -4,8 +4,8 @@
 #description:   This script is for lazy people who want to keep their Debian-based system up to date.
 #author:        Michael Muyakwa
 #created:       2018-01-04
-#updated:       2018-01-19
-#version:       1.4
+#updated:       2020-06-24
+#version:       2.5
 #license:       MIT
 #usage:         ./update.sh
 #==============================================================================
@@ -19,7 +19,11 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # Check if another process is already running a apt/dpkg-instance.
-locked=$($SUDO lsof -e /run/user/1000/gvfs /var/lib/dpkg/lock | wc -l);
+if [ -d "/run/user/1000/gvfs" ]; then
+    locked=$($SUDO lsof -e /run/user/1000/gvfs /var/lib/dpkg/lock | wc -l)
+else
+    locked=$($SUDO lsof /var/lib/dpkg/lock | wc -l)
+fi
 
 if [ $locked -eq 0 ]; then
 
@@ -37,6 +41,6 @@ if [ $locked -eq 0 ]; then
     $SUDO cat /var/log/dpkg.log | grep "^$(date +%Y-%m-%d).*\ installed\ "
 
 else
-    echo "Another process is already running updates.";
-    echo "Run this script at a later time again.";
+    echo "Another process is already running updates."
+    echo "Run this script at a later time again."
 fi
