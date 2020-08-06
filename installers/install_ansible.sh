@@ -15,9 +15,8 @@ fi
 
 $SUDO apt-get update -y
 $SUDO apt-get install software-properties-common -y
-$SUDO apt-add-repository ppa:ansible/ansible -y
+$SUDO apt-add-repository --yes --update ppa:ansible/ansible
 $SUDO apt-get update -y
 $SUDO apt-get install ansible -y
 $SUDO sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 $SUDO service ssh restart
-

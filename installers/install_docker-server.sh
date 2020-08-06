@@ -31,10 +31,9 @@ $SUDO apt-get update
 
 $SUDO apt-get install docker-ce -y
 
-$SUDO pip install docker-compose
-
 $SUDO systemctl enable docker
 
-#$SUDO curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-#$SUDO chmod +x /usr/local/bin/docker-compose
+#$SUDO pip install docker-compose
+$SUDO curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$SUDO chmod +x /usr/local/bin/docker-compose
 docker-compose --version
