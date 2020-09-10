@@ -47,3 +47,7 @@ sh installers/install_defaults-Non_GUI.sh
 
 cd installers/powerline/
 sh install_powerline.sh
+
+
+# Uninstall exim4 - port 25
+$SUDO apt purge exim4-base exim4-config -y
