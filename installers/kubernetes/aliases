@@ -1,0 +1,5 @@
+kubectl get pods --all-namespaces
+kubectl -n kube-system -l=k8s-app=kube-dns get pods
+kubectl get pods -o wide --all-namespaces
+kubectl -n default get secret
+kubectl -n <namespace> describe secrets <secret-name>

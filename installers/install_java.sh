@@ -7,11 +7,7 @@
 
 # root is always user_id 0
 SUDO=''
-if [ $(id -u) -ne 0 ]; then
-    SUDO='sudo'
-    echo "Your not root."
-    echo "Running apt-get with SUDO."
-fi
+[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 $SUDO apt-get update -y
 $SUDO apt-get install default-jdk-headless

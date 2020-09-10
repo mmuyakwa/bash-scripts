@@ -8,11 +8,7 @@
 
 # root is always user_id 0
 SUDO=''
-if [ $(id -u) -ne 0 ]; then
-    SUDO='sudo'
-    echo "Your not root."
-    echo "Running apt-get with SUDO."
-fi
+[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Set Timezone to Berlin
 $SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime

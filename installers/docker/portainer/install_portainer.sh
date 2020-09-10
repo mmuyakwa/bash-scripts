@@ -12,7 +12,10 @@
 #sudo systemctl restart docker
 
 docker volume create portainer_data
-docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+docker run --name portainer --restart always -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 echo 'Portainer is now available on Port 9000'
 
+echo 'Add templates from:'
+echo 'https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/template.json'
+echo ''

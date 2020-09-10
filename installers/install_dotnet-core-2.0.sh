@@ -13,11 +13,7 @@
 
 # root is always user_id 0
 SUDO=''
-if [ $(id -u) -ne 0 ]; then
-    SUDO='sudo'
-    echo "Your not root."
-    echo "Running apt-get with SUDO."
-fi
+[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 
 wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
