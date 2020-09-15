@@ -5,8 +5,6 @@ SUDO=''
 [ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 
-
-
 #if [ -f /etc/redhat-release ]; then
 #  yum update
 #fi
@@ -50,4 +48,4 @@ sh install_powerline.sh
 
 
 # Uninstall exim4 - port 25
-$SUDO apt purge exim4-base exim4-config -y
+$SUDO apt purge exim4-base exim4-config rpcbind -y
