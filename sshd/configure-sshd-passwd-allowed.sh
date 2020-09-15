@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #title:         configure-sshd-standard.sh
-#description:   Root-Login via ssh allowed. Only KEYS! This script is for lazy people who want to keep their Debian-based SSHd safe.
+#description:   Root- & PASSWORD-Login via ssh allowed. This script is for lazy people who want to keep their Debian-based SSHd safe.
 #author:        Michael Muyakwa
 #created:       2020-09-15
 #updated:       -
@@ -13,10 +13,10 @@
 
 #-! IMPORTANT !-#
 # This file configures your sshd_config.
+# PasswordAuthentication yes # LOGIN WITH PASSWORD WILL BE ALLOWED!!
 # PerminRootLogin yes # ROOT can still login via SSH
 # PubkeyAuthentication yes
 # PermitEmptyPasswords no
-# PasswordAuthentication no # NO PASSWORDS ALLOWED only keys
 # AddressFamily inet #(any, inet, inet6)
 # Banner none #Banner /etc/issue.net # none
 # MaxAuthTries 3
@@ -47,7 +47,7 @@ SSHConfig=''
 $SUDO sed -i 's/#\?\(PerminRootLogin\s*\).*$/\1 yes/' $SSHConfig
 $SUDO sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 yes/' $SSHConfig
 $SUDO sed -i 's/#\?\(PermitEmptyPasswords\s*\).*$/\1 no/' $SSHConfig
-$SUDO sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' $SSHConfig
+$SUDO sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 yes/' $SSHConfig
 $SUDO sed -i 's/#\?\(AddressFamily\s*\).*$/\1 inet/' $SSHConfig #(any, inet, inet6)
 $SUDO sed -i 's/#\?\(Banner\s*\).*$/\1 none/' $SSHConfig #Banner /etc/issue.net # none
 $SUDO sed -i 's/#\?\(MaxAuthTries\s*\).*$/\1 3/' $SSHConfig

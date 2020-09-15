@@ -2,6 +2,7 @@
 
 #title:         configure-sshd-google-totp.sh
 #description:   This script enables Google-Authenticator for Debian-based SSHd-access.
+#               Only KEYS, if available also with Google-Authenticator (Time-based One-time Password)
 #author:        Michael Muyakwa
 #created:       2020-09-15
 #updated:       -
@@ -10,12 +11,17 @@
 #usage:         sh configure-sshd-google-totp.sh
 #==============================================================================
 
+# Info:
+# The file "~/.google_authenticator" has to be present. (chmod 0600)
+# Otherwise Login with key as usual.
+# To enable Google-Authenticator, user has to run: "google-authenticator -t -f -d -w 3 -e 10 -r 3 -R 30"
+# ADMIN: To enforce only login with Google-Authenticator remove "nullok" from last line in "/etc/pam.d/sshd"
 
 #-! IMPORTANT !-#
-# ChallengeResponseAuthentication yes
+# ChallengeResponseAuthentication yes # Needed for Google Authenticator
+# PubkeyAuthentication yes # Needed for Google Authenticator
+# AuthenticationMethods publickey,keyboard-interactive # Needed for Google Authenticator
 # PasswordAuthentication no
-# PubkeyAuthentication yes
-# AuthenticationMethods publickey,keyboard-interactive
 #-! IMPORTANT !-#
 
 # root is always user_id 0
