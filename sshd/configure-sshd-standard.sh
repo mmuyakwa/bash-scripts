@@ -5,7 +5,7 @@
 #author:        Michael Muyakwa
 #created:       2020-09-15
 #updated:       -
-#version:       2.5
+#version:       1.0
 #license:       MIT
 #usage:         sh configure-sshd-standard.sh
 #==============================================================================

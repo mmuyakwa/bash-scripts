@@ -1,8 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Allow Root-Login
-# No-Passwd-Login
-#
+#title:         configure-sshd-google-totp.sh
+#description:   This script enables Google-Authenticator for Debian-based SSHd-access.
+#author:        Michael Muyakwa
+#created:       2020-09-15
+#updated:       -
+#version:       1.0
+#license:       MIT
+#usage:         sh configure-sshd-google-totp.sh
+#==============================================================================
+
+
+#-! IMPORTANT !-#
+# ChallengeResponseAuthentication yes
+# PasswordAuthentication no
+# PubkeyAuthentication yes
+# AuthenticationMethods publickey,keyboard-interactive
+#-! IMPORTANT !-#
 
 # root is always user_id 0
 SUDO=''
