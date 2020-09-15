@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-#title:         configure-sshd-standard.sh
+#title:         configure-sshd-minimum.sh
 #description:   Root- & PASSWORD-Login via ssh allowed. This script is for lazy people who want to keep their Debian-based SSHd safe.
 #author:        Michael Muyakwa
 #created:       2020-09-15
 #updated:       -
 #version:       1.0
 #license:       MIT
-#usage:         sh configure-sshd-standard.sh
+#usage:         sh configure-sshd-minimum.sh
 #==============================================================================
 
 
