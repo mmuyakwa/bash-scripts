@@ -24,18 +24,18 @@ $SUDO update-locale LANG=de_DE.UTF-8
 # Set Timezone to Berlin
 $SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-cd
+cd || exit
 if [ ! -d "scripts" ]; then
     mkdir scripts
 fi
 
-cd scripts
+cd scripts || exit
 
 if [ ! -d "bash-scripts" ]; then
     git clone https://github.com/mmuyakwa/bash-scripts.git
-    cd bash-scripts
+    cd bash-scripts || exit
 else
-    cd bash-scripts
+    cd bash-scripts || exit
     git pull origin master
 fi
 
@@ -45,7 +45,7 @@ sh update.sh
 sh installers/install_defaults-Non_GUI.sh
 sh sshd/configure-sshd-minimum.sh
 
-cd installers/powerline/
+cd installers/powerline/ || exit
 sh install_powerline.sh
 
 # Uninstall exim4 - port 25
