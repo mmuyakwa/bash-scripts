@@ -50,3 +50,8 @@ sh install_powerline.sh
 
 # Uninstall exim4 - port 25
 $SUDO apt purge exim4-base exim4-config rpcbind -y
+
+
+# Install "has" - https://github.com/kdabir/has
+cd /tmp/ || exit
+git clone https://github.com/kdabir/has.git && cd has && $SUDO make install

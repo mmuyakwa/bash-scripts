@@ -26,7 +26,7 @@ Options:
 }
 
 #set the API key from the environment variable
-if [ ! -z $PROWL_APIKEY ]; then
+if [ ! -z "$PROWL_APIKEY" ]; then
   API_KEY=$PROWL_APIKEY
 else
   echo "Prowl API Key not set as an environment variable. Add \"export PROWL_APIKEY={key}\" to your .bash_profile or .profile"
@@ -47,7 +47,7 @@ do  case "$o" in
   esac
 done
 # shift the option values out
-shift $(($OPTIND - 1))
+shift $(("$OPTIND" - 1))
 
 #use everything but the options as the message to send
 MESSAGE=$*
@@ -86,4 +86,4 @@ if [ -z "$MESSAGE" ]; then
 fi
 
 # Send off the message to prowl
-call=`curl -s -d "apikey=$API_KEY&priority=$PRIORITY&application=$APPLICATION&event=$SUBJECT&description=$MESSAGE" https://api.prowlapp.com/publicapi/add`
+call=$(curl -s -d "apikey=$API_KEY&priority=$PRIORITY&application=$APPLICATION&event=$SUBJECT&description=$MESSAGE" https://api.prowlapp.com/publicapi/add)

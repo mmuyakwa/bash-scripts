@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-cd /root/
+cd /root/ || exit
 mkdir nextcloud
 
-cd ~/scripts/bash-scripts/docker/nextcloud
+cd "$HOME/scripts/bash-scripts/docker/nextcloud" || exit
 
 docker-compose up -d
 
