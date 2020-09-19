@@ -12,7 +12,7 @@ $SUDO systemctl stop clamav-daemon
 $SUDO systemctl stop clamav-freshclam
 
 # Check if File exists
-SWAPF = '/etc/dphys-swapfile'
+SWAPF='/etc/dphys-swapfile'
 if [ ! -f $SWAPF ]; then
     #As root, edit the file /etc/dphys-swapfile and modify the variable CONF_SWAPSIZE:
     #CONF_SWAPSIZE=2048
@@ -20,9 +20,9 @@ if [ ! -f $SWAPF ]; then
 fi 
 
 # Check if Folder exists
-CLAMAVF = '/var/lib/clamav'
+CLAMAVF='/var/lib/clamav'
 if [ ! -d $CLAMAVF ]; then
-    cd $CLAMAVF
+    cd $CLAMAVF || exit
     RESULT=$?
     if [ $RESULT -eq 0 ]; then
         $SUDO rm -rf *

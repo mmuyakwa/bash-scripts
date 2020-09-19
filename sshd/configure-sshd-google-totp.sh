@@ -50,7 +50,7 @@ SSHConfig=''
 $SUDO sed -i 's/#\?\(ChallengeResponseAuthentication\s*\).*$/\1 yes/' $SSHConfig
 $SUDO sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' $SSHConfig
 $SUDO sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 yes/' $SSHConfig
-if [ grep -Fxq "AuthenticationMethods" $SSHConfig ]; then
+if grep -q "AuthenticationMethods" $SSHConfig ; then
     $SUDO sed -i 's/#\?\(AuthenticationMethods\s*\).*$/\1 publickey,keyboard-interactive/' $SSHConfig
 else
     $SUDO echo "AuthenticationMethods publickey,keyboard-interactive" >> $SSHConfig

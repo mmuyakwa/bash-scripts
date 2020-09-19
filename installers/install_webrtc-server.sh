@@ -14,7 +14,7 @@ SUDO=''
 git clone https://github.com/strukturag/spreed-webrtc.git
 sleep 2
 
-cd spreed-webrtc
+cd spreed-webrtc || exit
 
 #sudo snap install go --classic
 $SUDO apt install nodejs golang-go autoconf automake -y

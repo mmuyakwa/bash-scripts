@@ -60,7 +60,7 @@ $SUDO sed -i 's/#\?\(X11Forwarding\s*\).*$/\1 no/' $SSHConfig
 $SUDO sed -i 's/#\?\(PrintLastLog\s*\).*$/\1 no/' $SSHConfig
 $SUDO sed -i 's/#\?\(LoginGraceTime\s*\).*$/\1 30s/' $SSHConfig
 $SUDO sed -i 's/#\?\(ClientAliveCountMax\s*\).*$/\1 0/' $SSHConfig
-if [ grep -Fxq "Protocol" $SSHConfig ]; then
+if grep -q "Protocol" $SSHConfig; then
     $SUDO sed -i 's/#\?\(Protocol\s*\).*$/\1 2/' $SSHConfig
 else
     $SUDO echo "Protocol 2" >> $SSHConfig

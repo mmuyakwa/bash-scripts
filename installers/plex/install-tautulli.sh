@@ -16,11 +16,11 @@ $SUDO apt-get install git-core -y
 # Install prerequisites:
 $SUDO apt-get install python python-setuptools tzdata -y
 
-cd /opt
+cd /opt || exit
 $SUDO git clone https://github.com/Tautulli/Tautulli.git
 $SUDO addgroup tautulli && $SUDO adduser --system --no-create-home tautulli --ingroup tautulli
 $SUDO chown tautulli:tautulli -R /opt/Tautulli
-cd Tautulli
+cd Tautulli || exit
 
 # python Tautulli.py to start Tautulli
 # Tautulli will be loaded in your browser or listening on http://localhost:8181

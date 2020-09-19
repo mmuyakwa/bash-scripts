@@ -108,31 +108,31 @@ function makeTitle()
 # Function : system
 function system()
 {
-    OS=`uname -s`
+    OS=$(uname -s)
   
     if [ -e "/usr/bin/lsb_release" ] ; then
-        DISTRO=`/usr/bin/lsb_release -ds`
+        DISTRO=$(/usr/bin/lsb_release -ds)
     elif [ -e "/etc/system-release" ] ; then
-        DISTRO=`cat /etc/system-release`
+        DISTRO=$(cat /etc/system-release)
     else
-        DISTRO=`find /etc/*-release -type f -exec cat {} \; | grep NAME | tail -n 1 | cut -d= -f2 | tr -d '"'`;
+        DISTRO=$(find /etc/*-release -type f -exec cat {} \; | grep NAME | tail -n 1 | cut -d= -f2 | tr -d '"';)
     fi
   
-    HOSTNAME=`hostname`
-    KERNEL_INFO=`/bin/uname -r`
+    HOSTNAME=$(hostname)
+    KERNEL_INFO=$(/bin/uname -r)
    
-    UPTIME=`cat /proc/uptime`
+    UPTIME=$(cat /proc/uptime)
     UPTIME=${UPTIME%%.*}
     UPTIME_MINUTES=$(( UPTIME / 60 % 60 ))
     UPTIME_HOURS=$(( UPTIME / 60 / 60 % 24 ))
     UPTIME_DAYS=$(( UPTIME / 60 / 60 / 24 ))
  
-    LAST_BOOT_DATE=`who -b | awk '{print $3}'`
-    LAST_BOOT_TIME=`who -b | awk '{print $4}'`
+    LAST_BOOT_DATE=$(who -b | awk '{print $3}')
+    LAST_BOOT_TIME=$(who -b | awk '{print $4}')
  
-    USERS_NB=`who | wc -l`
+    USERS_NB=$(who | wc -l)
  
-    CURRENT_DATE=`/bin/date '+%F %T'`
+    CURRENT_DATE=$(/bin/date '+%F %T')
  
     makeTitle "System"
  
@@ -148,15 +148,15 @@ function system()
 # Function : load average
 function load_average()
 {
-    PROCESS_NB=`ps -e h | wc -l`
-    PROCESS_RUN=`ps r h | wc -l`
+    PROCESS_NB=$(ps -e h | wc -l)
+    PROCESS_RUN=$(ps r h | wc -l)
  
-    CPU_NB=`cat /proc/cpuinfo | grep "^processor" | wc -l`
+    CPU_NB=$(cat /proc/cpuinfo | grep "^processor" | wc -l)
  
-    LOAD_1=`cat /proc/loadavg | awk '{print $1}'`
+    LOAD_1=$(cat /proc/loadavg | awk '{print $1}')
     # LOAD_1_PERCENT=`echo $LOAD_1 | awk '{print 100 * $1}'`
-    LOAD_1_PERCENT=`echo $(($(echo $LOAD_1 | awk '{print 100 * $1}') / $CPU_NB))`
-    if [ $LOAD_1_PERCENT -ge 100 ] ; then
+    LOAD_1_PERCENT=$(echo $(($(echo $LOAD_1 | awk '{print 100 * $1}') / $CPU_NB)))
+    if [ "$LOAD_1_PERCENT" -ge 100 ] ; then
         LOAD_1_PERCENT=100;
     fi
  
