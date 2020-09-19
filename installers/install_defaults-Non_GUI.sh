@@ -8,7 +8,7 @@
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install my usual suspects
 $SUDO apt-get install mc screen build-essential clamav software-properties-common locales-all curl git gdebi-core bc rename awscli apt-transport-https -y

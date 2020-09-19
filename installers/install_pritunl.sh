@@ -8,7 +8,7 @@
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 $SUDO tee /etc/apt/sources.list.d/mongodb-org-4.0.list << EOF
 deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main

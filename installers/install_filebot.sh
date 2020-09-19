@@ -1,7 +1,7 @@
 #!/bin/sh -xu
 
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install Java with Desktop-client
 #sudo apt-get install default-jdk -y

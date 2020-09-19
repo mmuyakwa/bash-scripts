@@ -12,7 +12,7 @@
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Check if another process is already running a apt/dpkg-instance.
 if [ -d "/run/user/1000/gvfs" ]; then
@@ -21,7 +21,7 @@ else
     locked=$($SUDO lsof /var/lib/dpkg/lock | wc -l)
 fi
 
-if [ $locked -eq 0 ]; then
+if [ "$locked" -eq 0 ]; then
 
     $SUDO apt-get update -y
 

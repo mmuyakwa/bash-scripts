@@ -8,7 +8,7 @@
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install dependencies (powerline and pip [python]) and needed Fonts.
 $SUDO apt-get install powerline fonts-powerline python-pip python3-pip -y

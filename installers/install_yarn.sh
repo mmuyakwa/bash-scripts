@@ -11,7 +11,7 @@
 #==============================================================================
 
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 $SUDO apt-get update && sudo apt-get install curl -y
 

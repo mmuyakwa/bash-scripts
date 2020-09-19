@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 
 #if [ -f /etc/redhat-release ]; then
@@ -38,6 +38,7 @@ else
     cd bash-scripts
     git pull origin master
 fi
+
 
 sh update.sh
 

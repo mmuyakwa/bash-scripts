@@ -8,7 +8,7 @@
 
 # root is always user_id 0
 SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # See: https://openvpn.net/vpn-software-packages/#modal-items
 $SUDO apt update && $SUDO apt -y install ca-certificates wget net-tools

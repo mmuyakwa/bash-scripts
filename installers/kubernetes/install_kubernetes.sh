@@ -13,7 +13,7 @@
 
 # root is always user_id 0
 $SUDO=''
-[ $(id -u) -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # $SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
 # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | $SUDO apt-key add -
