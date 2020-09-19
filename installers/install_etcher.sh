@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://github.com/balena-io/etcher#debian-and-ubuntu-based-package-repository-gnulinux-x86x64 
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #title:         git_it.sh
 #description:   This is my tiny GIT-commit-script.

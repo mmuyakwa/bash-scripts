@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## TODO add https://docs.docker.com/install/linux/linux-postinstall/ if SUDO-User
 #sudo groupadd docker

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Default settings for Raspberry Pi's (beginning from RPI3)
 
