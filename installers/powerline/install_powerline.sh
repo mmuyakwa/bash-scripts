@@ -1,29 +1,25 @@
 #!/usr/bin/env bash
 
-# This script installs Powerline on the system.
-# ( https://github.com/b-ryan/powerline-shell )
-# Author: Michael Muyakwa, 2018-02-12
-# License: MIT
-#
+#title:         install_powerline.sh
+#description:   This script installs Powerline on the system.
+#               Must be root or SUDO-User to run script successfully.
+#author:        Michael Muyakwa
+#created:       2018-02-12
+#updated:       2020-09-21
+#version:       1.8
+#license:       MIT
+#usage:         sh install_powerline.sh
+#==============================================================================
 
 # root is always user_id 0
 SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install dependencies (powerline and pip [python]) and needed Fonts.
-$SUDO apt-get install powerline fonts-powerline python-pip python3-pip -y
-
-# Check-PIP-version
-which pip
-RESULT=$?
+$SUDO apt-get install powerline fonts-powerline python3-pip -y
 
 # Install "powerline-shell"
-if [ $RESULT -eq 0 ]; then
-  $SUDO pip install powerline-shell
-else
-  $SUDO pip3 install powerline-shell
-fi
-
+$SUDO pip3 install powerline-shell
 
 # Use my config for Powerline in current profile
 cp powerline-shell.json ~/.powerline-shell.json
