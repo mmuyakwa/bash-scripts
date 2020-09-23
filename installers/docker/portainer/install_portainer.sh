@@ -17,5 +17,7 @@ docker run --name portainer --restart always -d -p 8000:8000 -p 9000:9000 -v /va
 echo 'Portainer is now available on Port 9000'
 
 echo 'Add templates from:'
-echo 'https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/template.json'
+## v1 echo 'https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/template.json'
+## v2 echo 'https://github.com/dnburgess/self-hosted-template/raw/master/template.json'
+echo 'https://raw.githubusercontent.com/dnburgess/dbtechtemplate/master/Template/v2/template.json' # v2
 echo ''
