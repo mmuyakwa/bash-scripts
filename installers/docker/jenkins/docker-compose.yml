@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    jenkins:
+        build: ./
+        image: jenkins-docker
+        container_name: jenkins
+        ports:
+            - '8780:8080'
+            - '50000:50000'
+        volumes:
+            - '/var/jenkins_home:/var/jenkins_home'
+            - '/var/run/docker.sock:/var/run/docker.sock'
+        container_name: jenkins
