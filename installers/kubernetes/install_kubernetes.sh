@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-#title:         install_gofish.sh
-#description:   This script installs GoFish.
+#title:         install_kubernetes.sh
+#description:   This script installs Kubernetes.
 #               Must be root or SUDO-User to run script successfully.
 #author:        Michael Muyakwa
-#created:       2019-06-02
+#created:       2020-08-01
 #updated:       N/A
 #version:       0.1
 #license:       MIT
-#usage:         ./install_gofish.sh
+#usage:         ./install_kubernetes.sh
 #==============================================================================
 
 # root is always user_id 0
-$SUDO=''
+SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # $SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
