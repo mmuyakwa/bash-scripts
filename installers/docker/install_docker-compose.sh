@@ -17,12 +17,14 @@ SUDO=''
 
 DESTINATION='/usr/local/bin/docker-compose'
 
-$SUDO apt-get remove docker-compose
+$SUDO apt-get remove docker-compose -y
 $SUDO pip uninstall docker-compose
 #[ -f "$DESTINATION" ] && { $SUDO rm "$DESTINATION"; } # or
 if [ -f "$DESTINATION" ]; then
     $SUDO rm "$DESTINATION"
 fi
+
+$SUDO apt-get install jq -y
 
 compose_version="$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)"
 $SUDO curl -L https://github.com/docker/compose/releases/download/"$compose_version"/docker-compose-"$(uname -s)"-"$(uname -m)" -o "$DESTINATION"
