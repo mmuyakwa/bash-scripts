@@ -29,7 +29,15 @@ $SUDO apt-get install docker-ce -y
 
 $SUDO systemctl enable docker
 
+# Add user to "docker"-group
+[ "$(id -u)" -ne 0 ] && { sudo usermod -aG docker "$USER"; echo "You need to logout and back in to access docker."; }
+
 #$SUDO pip install docker-compose
 $SUDO curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $SUDO chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
+# Create folder for my docker-compose files.
+if [ ! -d "$HOME/scripts/Docker" ]; then
+    mkdir -p "$HOME/scripts/Docker"
+fi
