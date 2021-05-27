@@ -1,0 +1,8 @@
+ $ vultr-cli server info ############
+Ram 			2048 MB
+Disk			Virtual 55 GB
+VCPUS			1
+RegionID		9
+Allowed Bandwidth	10.00
+Plan			202
+OsID			352
