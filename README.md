@@ -1,23 +1,29 @@
 # bash-scripts
 
-A tiny collection of **Shell-Scripts** I use on a regular basis.
+My collection of **Shell-Scripts** I use on a regular basis.
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)](https://github.com/mmuyakwa/bash-scripts/blob/master/LICENSE) [![approved](https://img.shields.io/badge/approved-by%20Mein%20Nachbar-green.svg?style=plastic)](https://encrypted.google.com/search?q=steffen+held) [![powered_by](https://img.shields.io/badge/part%20of-Likando%20Publishing-red.svg?style=plastic)](https://www.likando.de)
 
-## Table of Contents
+## extern_ip.sh
 
-<!-- toc -->
+### Public-IP
 
-* [git_it.sh](#git-script) - Git automation
-* [make_workdir.sh](#workbench-script) - For my daily Workbench
-* [update.sh](#debian-update-script) - Automaticly update Debian-based systems
-* [extern_ip.sh](#public-ip) - Show public IP
-  * *Installers*:
-  * [install_composer.sh](#install-composer) - Automaticly install **Composer** on Debian-based systems (with **Laravel** `a PHP-Framework`)
+`extern_ip.sh` is a simple small script which shows the current public IP of your host. (IP will be fetched from [http://checkip.dyndns.org/](http://checkip.dyndns.org/) )
 
-<!-- toc stop -->
+    user@client:~/scripts/bash$ sh extern_ip.sh
+    73.217.243.152
 
-## Git-Script
+#### Usage
+
+    sh extern_ip.sh # Simply prints your public IP on the console.
+
+## eZServerMonitor.sh
+
+## firstrun.sh
+
+## generate_key.sh
+
+## git_it.sh
 
 The innitial run of this script checks if a Git-Repo already exists.
 
@@ -53,17 +59,149 @@ The last step is to check if a remote Repo ist set and push the repo to remote.
 
     git push -u origin master
 
-### Flowchart
+#### Flowchart
 
 ![flowchart](img/git_it-flow.png "The rundown of this script.")
 
-### Usage
+#### Usage
 
     sh git_it.sh # Initializes the Git-Repository on first run.
                  # Stages, Committs and Pushes if remote Repo is set.
     sh git_it.sh "Your Message" # Adds "Your Message" to the Commit-Message.
 
-## Workbench-Script
+#### img
+
+##### git_it-flow.png
+
+## installers
+
+### bash_profile
+
+#### bash_aliases
+
+#### install_aliases.sh
+
+#### pfetch.sh
+
+### compliance
+
+#### install_inspec.sh
+
+### docker
+
+#### install_ctop.sh
+
+#### install_docker-compose.sh
+
+#### jenkins
+
+##### docker-compose.yml
+
+##### install_jenkins_debian.sh
+
+#### nextcloud
+
+##### docker-compose.yml
+
+##### install_nextcloud.sh
+
+#### portainer
+
+##### install_agent.sh
+
+##### install_portainer.sh
+
+##### update_portainer.sh
+
+### install_ansible.sh
+
+### install_composer.sh
+
+### Install Composer
+
+`install_composer.sh` is a script I wipped up to quickly install **Composer** on development machines (mostly on VM's).
+
+### install_defaults-GUI.sh
+
+### install_defaults-Non_GUI.sh
+
+### install_docker-server.sh
+
+### install_dotnet-core-2.0.sh
+
+### install_etcher.sh
+
+### install_filebot.sh
+
+### install_gofish.sh
+
+### install_java.sh
+
+### install_jellyfin-mediaserver.sh
+
+### install_jitsi.sh
+
+### install_LEMP.sh
+
+### install_libreoffice-de.sh
+
+### install_lynis.sh
+
+### install_mariadb.sh
+
+### install_monitorix.sh
+
+### install_nvm.sh
+
+### install_openvpn-server.sh
+
+### install_pritunl.sh
+
+### install_webmin.sh
+
+### install_webrtc-server.sh
+
+### install_yarn.sh
+
+### kubernetes
+
+#### aliases
+
+#### init_kubernetes.sh
+
+#### install_devspace.sh
+
+#### install_kubernetes.sh
+
+### mariadb-installieren.txt
+
+### plex
+
+#### install-tautulli.sh
+
+#### install-update-plex.sh
+
+### powerline
+
+#### bashrc
+
+#### font-patcher.py
+
+#### install_powerline.sh
+
+#### powerline-shell.json
+
+### raspberry_pi
+
+#### install_defaults_RPi.sh
+
+## intern_ip.sh
+
+## LICENSE
+
+## make_workdir.sh
+
+### Workbench-Script
 
 Before starting a new project, I usually generate a Folder with the current date, where I put my project folders into.
 
@@ -79,11 +217,35 @@ I generate the foldername with the current date via:
 
 And create the folder via **mkdir** with the parameter `-p` which will show no errors if a folder already exists, while creating that path.
 
-### Usage
+#### Usage
 
     sh make_workdir.sh # Simply creates the folder with the path of the current date.
 
-## Debian Update-Script
+## prowl.sh
+
+## README.md
+
+## sshd
+
+### configure-sshd-google-totp.sh
+
+### configure-sshd-minimum.sh
+
+### configure-sshd-standard.sh
+
+## tiling_wm_apps
+
+### install_default_minimal_apps.sh
+
+### install_terminoligy_console.sh
+
+## Todos
+
+### RootKitHunter_installieren.txt
+
+## update.sh
+
+### Debian Update-Script
 
 This script is intended for developer-machines.
 **I would not recommend using this on a productive system.**
@@ -106,23 +268,14 @@ The following `apt-get`-commands will be issued:
 
 The script will not ask for further permission, because everything is automaticly approved.
 
-### Usage
+#### Usage
 
     sh update.sh # Updates the system and approves every change (Must be root or a SUDO-User).
 
-## Public-IP
+## vultr
 
-`extern_ip.sh` is a simple small script which shows the current public IP of your host. (IP will be fetched from [http://checkip.dyndns.org/](http://checkip.dyndns.org/) )
+### info.txt
 
-    user@client:~/scripts/bash$ sh extern_ip.sh
-    73.217.243.152
-
-### Usage
-
-    sh extern_ip.sh # Simply prints your public IP on the console.
-
-## Install Composer
-
-`install_composer.sh` is a script I wipped up to quickly install **Composer** on development machines (mostly on VM's).
+### update-rdp-firewall.sh
 
 MIT License
