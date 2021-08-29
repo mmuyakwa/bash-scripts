@@ -15,7 +15,6 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 
-$SUDO apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
 $SUDO wget -O - https://packages.cisofy.com/keys/cisofy-software-public.key | $SUDO apt-key add -
 
 $SUDO apt install apt-transport-https
