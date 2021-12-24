@@ -8,4 +8,4 @@ SUDO=''
 $SUDO docker pull portainer/portainer-ce
 $SUDO docker stop portainer
 $SUDO docker rm portainer
-$SUDO docker run --name portainer --restart always -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce -e "TZ=Europe/Berlin"
+$SUDO docker run --name portainer --restart always -d -e TIME_ZONE="Europe/Berlin" -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce

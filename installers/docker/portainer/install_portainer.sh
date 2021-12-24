@@ -12,7 +12,7 @@
 #sudo systemctl restart docker
 
 docker volume create portainer_data
-docker run --name portainer --restart always -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce -e "TZ=Europe/Berlin"
+docker run --name portainer --restart always -d -e TIME_ZONE="Europe/Berlin" -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 
 echo 'Portainer is now available on Port 9000'
 
