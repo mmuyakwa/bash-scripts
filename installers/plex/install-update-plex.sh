@@ -26,7 +26,7 @@ plex_url=$(curl -s https://plex.tv/api/downloads/1.json \
  | jq -r '.computer.Linux.releases[] | select((.build=="linux-ubuntu-x86_64") and .distro=="ubuntu") .url')
 
 # Download the latest version of plex and install it
-curl -O $plex_url && $SUDO gdebi ${plex_url##*/}
+curl -O $plex_url && $SUDO gdebi --n ${plex_url##*/}
 
 # Run the following code to set your Keyboard-Language
 # 'sudo dpkg-reconfigure keyboard-configuration'
