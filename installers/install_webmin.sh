@@ -18,7 +18,7 @@ SUDO=''
 
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.881_all.deb
 
-$SUDO apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python -y
 
 $SUDO dpkg --install webmin_1.881_all.deb
 

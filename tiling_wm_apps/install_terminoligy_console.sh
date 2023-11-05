@@ -20,7 +20,7 @@ $SUDO add-apt-repository ppa:enlightenment-git/ppa
 
 $SUDO apt-get update
 
-$SUDO apt-get install terminology -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install terminology -y
 
 gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminology
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"

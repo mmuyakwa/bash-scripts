@@ -24,7 +24,7 @@ if [ -f "$DESTINATION" ]; then
     $SUDO rm "$DESTINATION"
 fi
 
-$SUDO apt-get install jq -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install jq -y
 
 compose_version="$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)"
 $SUDO curl -L https://github.com/docker/compose/releases/download/"$compose_version"/docker-compose-"$(uname -s)"-"$(uname -m)" -o "$DESTINATION"

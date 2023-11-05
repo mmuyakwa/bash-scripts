@@ -16,4 +16,4 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install dependencies (powerline and pip [python]) and needed Fonts.
-$SUDO apt-get install qutebrowser pcmanfm -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install qutebrowser pcmanfm -y

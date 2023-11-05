@@ -19,9 +19,9 @@ SUDO=''
 wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 $SUDO dpkg -i packages-microsoft-prod.deb
 
-$SUDO apt-get install apt-transport-https -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install apt-transport-https -y
 $SUDO apt-get update
-$SUDO apt-get install dotnet-sdk-2.1.200 -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install dotnet-sdk-2.1.200 -y
 
 rm packages-microsoft-prod.deb
 

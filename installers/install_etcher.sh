@@ -8,5 +8,5 @@ SUDO=''
 echo "deb https://deb.etcher.io stable etcher" | $SUDO tee /etc/apt/sources.list.d/balena-etcher.list
 $SUDO apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
 $SUDO apt-get update
-$SUDO apt-get install balena-etcher-electron -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install balena-etcher-electron -y
 

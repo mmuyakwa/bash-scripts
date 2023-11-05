@@ -18,8 +18,8 @@ SUDO=''
 # but can easily be adapted to Fedora or MacOS if you're a pervert
 # or hipster respectively.
 #
-# requirements: apt-get install curl jq
-$SUDO apt-get install curl jq sqlite3 gdebi-core -y
+# requirements: DEBIAN_FRONTEND=noninteractive apt-get install curl jq
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install curl jq sqlite3 gdebi-core -y
 
 # Insane JQ parsing to select both build AND distro. 
 plex_url=$(curl -s https://plex.tv/pms/downloads/5.json | jq -r '.computer.Linux.releases[] | select((.build=="linux-x86_64") and .distro=="debian") .url')

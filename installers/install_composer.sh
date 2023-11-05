@@ -16,9 +16,9 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install PHP-CLI in v7.0 (php 7.0)
-$SUDO apt-get install php-cli -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install php-cli -y
 # Dependencies for Lavarel
-$SUDO apt-get install php-zip php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json curl php-curl openssl -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install php-zip php-gd php-mbstring php-xml php-mysql php-pear php-token-stream php-json curl php-curl openssl -y
 
 # Script from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
@@ -46,6 +46,6 @@ echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 
 # install Node.js
 curl -sL https://deb.nodesource.com/setup_8.x | $SUDO -E bash -
-$SUDO apt-get install -y nodejs
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
 exit $RESULT

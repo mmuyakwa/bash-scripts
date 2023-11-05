@@ -10,4 +10,4 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 $SUDO apt-get update -y
-$SUDO apt-get install default-jdk-headless
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install default-jdk-headless

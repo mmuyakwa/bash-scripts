@@ -14,14 +14,14 @@ SUDO=''
 $SUDO cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 # Install my usual suspects
-$SUDO apt-get install filezilla remmina mc screen build-essential software-properties-common gdebi bc redshift-gtk retext locales-all curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar ffmpeg rename awscli apt-transport-https clamav -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install filezilla remmina mc screen build-essential software-properties-common gdebi bc redshift-gtk retext locales-all curl git libavcodec-extra gksudo libavcodec-extra p7zip-full p7zip-rar ffmpeg rename awscli apt-transport-https clamav -y
 
 $SUDO add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
 $SUDO add-apt-repository ppa:obsproject/obs-studio -y
 
 $SUDO apt-get update
-$SUDO apt-get install simplescreenrecorder -y
-$SUDO apt-get install obs-studio -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install simplescreenrecorder -y
+$SUDO DEBIAN_FRONTEND=noninteractive apt-get install obs-studio -y
 
 # Download Google-Chrome DEB.
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
