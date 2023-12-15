@@ -18,7 +18,7 @@ if [ -f "requirements.txt" ]; then
 
     if [[ "$VIRTUAL_ENV" != "$current_directory" ]]; then
         # Install the imports
-        python -m pip install --upgrade pip python-dotenv
+        python -m pip install --upgrade pip python-dotenv ipykernel
         python -m pip install -r requirements.txt
         deactivate
     else

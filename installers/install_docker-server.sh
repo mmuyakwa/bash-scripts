@@ -13,29 +13,39 @@
 
 # root is always user_id 0
 SUDO=''
-[ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
+[ "$(id -u)" -ne 0 ] && {
+    SUDO='sudo'
+    echo "Your not root."
+    echo "Running commands with SUDO."
+}
 
-$SUDO apt-get update
+# Pakete die zur Installation benötigt werden installieren
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common python-pip -y
+$SUDO apt update
+$SUDO apt install ca-certificates curl gnupg apt-transport-https gpg
 
-$SUDO curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
+# GPG-Key downloaden und Repository hinterlegen im System
 
-$SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+$SUDO curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker.gpg
+$SUDO echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
+$SUDO apt update
 
-$SUDO apt-get update
+# Docker-Pakete installieren
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install docker-ce -y
+$SUDO apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
 
-$SUDO systemctl enable docker
+# Prüfe ob der Befehl "$SUDO systemctl is-active docker", "active" zurückgibt. Wenn ja, dann ist Docker installiert und läuft.
+if [ "$($SUDO systemctl is-active docker)" = "active" ]; then
+    echo "Docker is installed and running."
+else
+    echo "Docker is not installed or not running."
+fi
 
 # Add user to "docker"-group
-[ "$(id -u)" -ne 0 ] && { sudo usermod -aG docker "$USER"; echo "You need to logout and back in to access docker."; }
-
-#$SUDO pip install docker-compose
-$SUDO curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-$SUDO chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+[ "$(id -u)" -ne 0 ] && {
+    sudo usermod -aG docker "$USER"
+    echo "You need to logout and back in to access docker."
+}
 
 # Create folder for my docker-compose files.
 if [ ! -d "$HOME/scripts/Docker" ]; then
