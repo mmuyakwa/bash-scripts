@@ -25,7 +25,7 @@ if [ ! -d $CLAMAVF ]; then
     cd $CLAMAVF || exit
     RESULT=$?
     if [ $RESULT -eq 0 ]; then
-        $SUDO rm -rf *
+        $SUDO rm -rf ./*
         $SUDO freshclam
     fi
 fi

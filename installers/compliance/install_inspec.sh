@@ -12,7 +12,7 @@
 
 # root is always user_id 0
 SUDO=''
-if [ $(id -u) -ne 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
     SUDO='sudo'
     echo "Your not root."
     echo "Running apt-get with SUDO."

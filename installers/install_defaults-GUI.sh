@@ -26,6 +26,7 @@ $SUDO DEBIAN_FRONTEND=noninteractive apt-get install obs-studio -y
 # Download Google-Chrome DEB.
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 $SUDO dpkg -i google-chrome-stable_current_amd64.deb > /dev/null 2>&1
+# shellcheck disable=SC2181
 if [ $? -gt 0 ]; then
 # Download missing dependencies for Google-Chrome.
     $SUDO apt-get -f --force-yes --yes install > /dev/null 2>&1

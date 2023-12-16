@@ -24,5 +24,5 @@ docker-compose up -d --build
 
 # show endpoint
 echo 'Jenkinsn is installed'
-echo 'You should now be able to access jenkins at: http://'$(curl -s ifconfig.co)':8780'
+echo "You should now be able to access jenkins at: http://$(curl -s ifconfig.co):8780"
 

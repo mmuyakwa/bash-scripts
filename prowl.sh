@@ -26,7 +26,7 @@ Options:
 }
 
 #set the API key from the environment variable
-if [ ! -z "$PROWL_APIKEY" ]; then
+if [ -z "$PROWL_APIKEY" ]; then
   API_KEY=$PROWL_APIKEY
 else
   echo "Prowl API Key not set as an environment variable. Add \"export PROWL_APIKEY={key}\" to your .bash_profile or .profile"
@@ -56,34 +56,29 @@ MESSAGE=$*
 if [ -z "$SUBJECT" ]; then
   echo "Subject is required. Use \"-s\" to set it."
   usage
-  exit 1
 fi
 
 #Ensure app is supplied as it's required
 if [ -z "$APPLICATION" ]; then
   echo "Application is required. Use \"-a\" to set it."
   usage
-  exit 1
 fi
 
 if [ "$PRIORITY" -lt "-2" ]; then
   echo "Priority cannoy be lower than -2 (Very Low)"
   usage
-  exit 1
 fi
 
 if [ "$PRIORITY" -gt "2" ]; then
   echo "Priority cannoy be higher than 2 (Emergency)"
   usage
-  exit 1
 fi
 
 #Ensure that a message was provided after argument parsing
 if [ -z "$MESSAGE" ]; then
   echo "No message was provided to send."
   usage
-  exit 1
 fi
 
 # Send off the message to prowl
-call=$(curl -s -d "apikey=$API_KEY&priority=$PRIORITY&application=$APPLICATION&event=$SUBJECT&description=$MESSAGE" https://api.prowlapp.com/publicapi/add)
+curl -s -d "apikey=$API_KEY&priority=$PRIORITY&application=$APPLICATION&event=$SUBJECT&description=$MESSAGE" https://api.prowlapp.com/publicapi/add

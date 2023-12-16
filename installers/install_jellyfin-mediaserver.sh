@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Install HTTPS transport for APT if you haven't already:
 apt install apt-transport-https
 
@@ -19,5 +21,5 @@ apt install jellyfin -y
 service jellyfin status
 systemctl restart jellyfin
 
-echo http://$(echo $HOSTNAME):8096
-
+# Open the Jellyfin web interface in your browser:
+echo "http://${HOSTNAME}:8096"

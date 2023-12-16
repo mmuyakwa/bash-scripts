@@ -65,7 +65,7 @@ else
     #git remote add origin git@github.com:mmuyakwa/bash-scripts.git
 
     # Check if a remote Repo is set.
-    if grep -q "url = " ${directory}/config
+    if grep -q "url = " "${directory}"/config
     then
         # Remote Repo ist set. Push changes to remote Repo.
         echo "Pushing to remote Git-Repo.";

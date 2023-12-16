@@ -11,10 +11,10 @@
 #==============================================================================
 
 # Save current directory
-set PWD = pwd
+PWD=$(pwd)
 
 # Goto Script-Folder
-cd "$HOME/scripts/bash-scripts"
+cd "$HOME/scripts/bash-scripts" || exit
 
 # Check if "git" is installed
 if [ -x "$(command -v git)" ]; then
@@ -30,9 +30,9 @@ sh update.sh
 if [ -x "$(command -v docker)" ]; then
     echo "Update docker"
     # Check if Portainer is installed
-    if [ $( docker ps -a | grep portainer | wc -l ) -gt 0 ]; then
+    if [ "$(docker ps -a | grep -c portainer)" -gt 0 ]; then
         # Update Portainer-Container
-        cd "installers/docker/portainer"
+        cd "installers/docker/portainer" || exit
         sh update_portainer.sh
     else
         echo "Portainer seems not to be installed."
@@ -40,4 +40,4 @@ if [ -x "$(command -v docker)" ]; then
 
 fi
 
-cd "$PWD"
+cd "$PWD" || exit

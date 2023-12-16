@@ -67,9 +67,7 @@ else
 fi
 
 # Check if Config has issues
-$SUDO sshd -t
-
-if [[ "${?}" -ne 0 ]]; then
+if ! $SUDO sshd -t; then
    echo "The sshd_config file was not modified successfully"
    exit 1
 else

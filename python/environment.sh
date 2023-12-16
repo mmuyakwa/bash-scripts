@@ -14,6 +14,7 @@ python -m venv "$current_directory"
 
 # Check if requirements.txt exists and install the imports
 if [ -f "requirements.txt" ]; then
+    # shellcheck source=/dev/null
     source "$current_directory/bin/activate"
 
     if [[ "$VIRTUAL_ENV" != "$current_directory" ]]; then

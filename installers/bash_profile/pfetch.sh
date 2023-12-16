@@ -110,6 +110,7 @@ get_title() {
     # the intention for using it is allowing the user to overwrite the
     # value on invocation.
     # shellcheck disable=SC2039
+    # shellcheck disable=SC3028
     hostname=${HOSTNAME:-${hostname:-$(hostname)}}
 
     log "[3${PF_COL3:-1}m${user}${c7}@[3${PF_COL3:-1}m${hostname}" " " >&6

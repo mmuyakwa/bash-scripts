@@ -25,7 +25,7 @@ $SUDO DEBIAN_FRONTEND=noninteractive apt-get install curl jq sqlite3 gdebi-core 
 plex_url=$(curl -s https://plex.tv/pms/downloads/5.json | jq -r '.computer.Linux.releases[] | select((.build=="linux-x86_64") and .distro=="debian") .url')
 
 # Download the latest version of plex and install it
-curl -O $plex_url && $SUDO gdebi --n ${plex_url##*/}
+curl -O "$plex_url" && $SUDO gdebi --n "${plex_url##*/}"
 
 # Run the following code to set your Keyboard-Language
 # 'sudo dpkg-reconfigure keyboard-configuration'

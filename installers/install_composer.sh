@@ -42,6 +42,7 @@ $SUDO mv composer.phar /usr/local/bin/composer
 # Install Lavarel globaly (A PHP MVC-Framework)
 composer global require "laravel/installer"
 # Write LAVAREL to $PATH
+# shellcheck disable=SC2016
 echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 
 # install Node.js
