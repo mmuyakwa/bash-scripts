@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2002,SC2003
+
+
 if [ ! "$BASH_VERSION" ] ; then
     exec /bin/bash "$0" "$@"
 fi
