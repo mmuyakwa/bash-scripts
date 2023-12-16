@@ -31,7 +31,7 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | $SUDO tee -a /etc
 $SUDO apt-get update
 $SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y kubelet kubeadm kubectl
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 $SUDO mv ./kubectl /usr/local/bin/kubectl
 
