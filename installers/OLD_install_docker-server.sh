@@ -17,7 +17,7 @@ SUDO=''
 
 $SUDO apt-get update
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common python-pip -y
+$SUDO apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common python-pip -y
 
 $SUDO curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
 
@@ -25,7 +25,7 @@ $SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/deb
 
 $SUDO apt-get update
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install docker-ce -y
+$SUDO apt-get install docker-ce -y
 
 $SUDO systemctl enable docker
 

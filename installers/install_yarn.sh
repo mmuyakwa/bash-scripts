@@ -13,9 +13,9 @@
 SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
-$SUDO apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install curl -y
+$SUDO apt-get update && sudo apt-get install curl -y
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | $SUDO apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | $SUDO tee /etc/apt/sources.list.d/yarn.list
 
-$SUDO apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install yarn -y
+$SUDO apt-get update && sudo apt-get install yarn -y

@@ -17,4 +17,4 @@ SUDO=''
 
 $SUDO apt-get update
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install libreoffice-calc libreoffice-writer libreoffice-help-de libreoffice-l10n-de -y
+$SUDO apt-get install libreoffice-calc libreoffice-writer libreoffice-help-de libreoffice-l10n-de -y

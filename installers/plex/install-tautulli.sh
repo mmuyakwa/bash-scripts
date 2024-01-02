@@ -11,10 +11,10 @@ SUDO=''
 
 # Tautulli will be installed to /opt/Tautulli.
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install git-core -y
+$SUDO apt-get install git-core -y
 
 # Install prerequisites:
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install python python-setuptools tzdata -y
+$SUDO apt-get install python python-setuptools tzdata -y
 
 cd /opt || exit
 $SUDO git clone https://github.com/Tautulli/Tautulli.git

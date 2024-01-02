@@ -15,7 +15,7 @@ SUDO=''
 
 
 $SUDO apt-get update -y
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install git -y
+$SUDO apt-get install git -y
 
 # Set locale
 $SUDO locale-gen de_DE.UTF-8

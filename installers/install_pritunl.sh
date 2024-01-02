@@ -18,7 +18,7 @@ $SUDO tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install dirmngr
+$SUDO apt-get install dirmngr
 $SUDO apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 $SUDO apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 $SUDO apt-get update

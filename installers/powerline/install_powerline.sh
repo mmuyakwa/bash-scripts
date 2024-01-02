@@ -16,7 +16,7 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install dependencies (powerline and pip [python]) and needed Fonts.
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install powerline fonts-powerline python3-pip -y
+$SUDO apt-get install powerline fonts-powerline python3-pip -y
 
 # Install "powerline-shell"
 $SUDO pip3 install powerline-shell

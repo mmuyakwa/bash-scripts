@@ -15,7 +15,7 @@
 SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install mariadb-server -y
+$SUDO apt-get install mariadb-server -y
 
 $SUDO mysql_secure_installation
 

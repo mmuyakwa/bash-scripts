@@ -4,10 +4,10 @@ SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
 # Install Java with Desktop-client
-#sudo DEBIAN_FRONTEND=noninteractive apt-get install default-jdk -y
+#sudo apt-get install default-jdk -y
 
 # Install Java on headless-client
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install default-jdk-headless -y
+$SUDO apt-get install default-jdk-headless -y
 
 # 1. Import signing keys
 curl -fsSL "https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub" | $SUDO apt-key add "-"
@@ -19,8 +19,8 @@ echo "deb [arch=amd64] https://get.filebot.net/deb/ stable main" | $SUDO tee /et
 $SUDO apt-get update
 
 # 4. Install FileBot and its dependencies
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install apt-transport-https -y
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install filebot #--install-suggests
+$SUDO apt-get install apt-transport-https -y
+$SUDO apt-get install filebot #--install-suggests
 
 $SUDO apt install libmediainfo0v5 -y # Prevent: Unable to load amd64 (64-bit) native library libmediainfo.so
 

@@ -15,21 +15,21 @@
 SUDO=''
 [ "$(id -u)" -ne 0 ] && { SUDO='sudo'; echo "Your not root."; echo "Running commands with SUDO."; }
 
-# $SUDO apt-get update && $SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https curl
+# $SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
 # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | $SUDO apt-key add -
 # $SUDO cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 # deb https://apt.kubernetes.io/ kubernetes-xenial main
 # EOF
 # $SUDO apt-get update
-# $SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y kubelet kubeadm kubectl
+# $SUDO apt-get install -y kubelet kubeadm kubectl
 # $SUDO apt-mark hold kubelet kubeadm kubectl
 
 
-$SUDO apt-get update && $SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https curl
+$SUDO apt-get update && $SUDO apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | $SUDO apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | $SUDO tee -a /etc/apt/sources.list.d/kubernetes.list
 $SUDO apt-get update
-$SUDO DEBIAN_FRONTEND=noninteractive apt-get install -y kubelet kubeadm kubectl
+$SUDO apt-get install -y kubelet kubeadm kubectl
 
 curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
