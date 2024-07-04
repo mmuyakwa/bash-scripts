@@ -69,7 +69,7 @@ else
     then
         # Remote Repo ist set. Push changes to remote Repo.
         echo "Pushing to remote Git-Repo.";
-        git push -u origin master
+        git push -u origin #master
     else
         # Remind me to set the remote Repo
         echo "!---!";
