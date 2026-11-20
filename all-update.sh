@@ -28,12 +28,12 @@ sh update.sh
 
 # Check if "docker" is installed
 if [ -x "$(command -v docker)" ]; then
-    echo "Update docker"
-    # Check if Portainer is installed
-    if [ "$(docker ps -a | grep -c portainer)" -gt 0 ]; then
-        # Update Portainer-Container
-        cd "installers/docker/portainer" || exit
-        sh update_portainer.sh
+#    echo "Update docker"
+#    # Check if Portainer is installed
+#    if [ "$(docker ps -a | grep -c portainer)" -gt 0 ]; then
+#        # Update Portainer-Container
+#        cd "installers/docker/portainer" || exit
+#        sh update_portainer.sh
     else
         echo "Portainer seems not to be installed."
     fi
