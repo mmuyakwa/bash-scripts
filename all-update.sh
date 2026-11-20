@@ -37,7 +37,7 @@ sh update.sh
 #    else
 #        echo "Portainer seems not to be installed."
 #    fi
-
-fi
+#
+#fi
 
 cd "$PWD" || exit
